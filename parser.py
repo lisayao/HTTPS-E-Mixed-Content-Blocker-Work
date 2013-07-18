@@ -1,11 +1,28 @@
+#!/usr/bin/python
 #This script pulls all target urls from HHTPS-Everywhere Rulesets.
 
 import xml.parsers.expat
 import glob
 import os
+import sys
+
+#checks for correct number of user arguments
+if len(sys.argv) != 2 :
+    print "Usage: {0} [https-everywhere git repository directory]".format(sys.argv[0])
+    sys.exit()
+
+dir = sys.argv[1]
+
+#checks for valid path name
+if not os.path.exists(os.path.dirname(dir)):
+	print "Please submit valid path: {0} [https-everywhere git repository directory]".format(sys.argv[0])
+	sys.exit()
 
 #change the path below as relevant
-os.chdir("/Users/lisayao/https-everywhere/src/chrome/content/rules")
+# os.chdir("/Users/lisayao/https-everywhere/src/chrome/content/rules")
+
+#changes directory to user input
+os.chdir(dir)
 
 #prints the name of the file and the url for each target tag
 for files in glob.glob("*.xml"):
