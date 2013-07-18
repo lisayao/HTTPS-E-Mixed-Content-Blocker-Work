@@ -18,7 +18,7 @@ for files in glob.glob("*.xml"):
 			for n in range(0, len(attrs)):
 				print fo.name, attrs.values()[n]
 				# sometimes the stuff prints in unicode and we can escape it as below
-				# print attrs.keys()[n]. encode("ascii"), attrs.values()[n].encode("ascii")
+				# print attrs.keys()[n].encode("ascii"), attrs.values()[n].encode("ascii")
 		
 	p = xml.parsers.expat.ParserCreate()
 
