@@ -24,16 +24,26 @@ if not os.path.exists(os.path.dirname(dir)):
 #changes directory to user input
 os.chdir(dir)
 
+num = 0
+
 #prints the name of the file and the url for each target tag
 for files in glob.glob("*.xml"):
 	fo = open(files, "r")
 	text = fo.read()	
 
 	def start_element(name, attrs):
+		global num
 		if name == "target":
 			# print 'Start element:', name, attrs
 			for n in range(0, len(attrs)):
-				print fo.name, attrs.values()[n]
+				# putting this in a try block, because encoding errors throw exceptions
+				try:
+					domain = attrs.values()[n]
+					if '*' not in domain:
+						print "{0},{1}".format(num, domain)
+						num += 1
+				except:
+					pass
 				# sometimes the stuff prints in unicode and we can escape it as below
 				# print attrs.keys()[n].encode("ascii"), attrs.values()[n].encode("ascii")
 		
