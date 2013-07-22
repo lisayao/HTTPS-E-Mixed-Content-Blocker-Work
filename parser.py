@@ -34,7 +34,7 @@ num = 0
 for files in glob.glob("*.xml"):
 	fo = open(files, "r")
 	text = fo.read()
-	global array1
+	global array
 	array = []
 
 	#this is a strategy to check for already disabled rulesets. 
