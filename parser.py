@@ -1,5 +1,5 @@
-#!/usr/bin/python
-# This script pulls all target urls from HHTPS-Everywhere Rulesets. 
+#!/usr/bin/env python
+# This script pulls all target urls from HTTPS-Everywhere Rulesets. 
 # It does not print any domain names containing *, any containing "www." 
 # (which is taken care of by the mochitest), and all rulesets that 
 # are already deactivated by designation as "default_off" or
