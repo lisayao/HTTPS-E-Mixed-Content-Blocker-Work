@@ -1,5 +1,5 @@
-HTTPS Everywhere Mixed Content Parser
-=====================================
+HTTPS-E Mixed Content Code
+==========================
 
 parser.py looks through all of the HTTPS Everywhere rules and makes a list of domain names to use in the Firefox MCB mochitest. Usage:
 
